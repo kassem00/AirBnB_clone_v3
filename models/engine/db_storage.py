@@ -78,7 +78,7 @@ class DBStorage:
     def get(self, cls, id):
         """ get string representing the object ID """
         match = cls + '.' + id
-        obj_dict = models.storage.all(cls)
+        o_dict = models.storage.all(cls)
 
         for key, value in o_dict.items():
             if key == match:
@@ -86,5 +86,5 @@ class DBStorage:
 
     def count(self, cls=None):
         """ count number of opject of classs """
-        obj_dict = models.storage.all(cls)
+        o_dict = models.storage.all(cls)
         return len(o_dict)
