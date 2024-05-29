@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from . import app_views
 from flask import jsonify
+from json import loads
 """ index view blueprint file """
 
 
