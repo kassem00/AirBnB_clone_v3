@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-""" index view blueprint file """
 from . import app_views
 from flask import jsonify
+""" index view blueprint file """
 
 
 @app_views.route('/status', methods=['GET'])
