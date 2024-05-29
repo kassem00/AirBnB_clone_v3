@@ -1,0 +1,14 @@
+from api.v1.views import app_views
+from flask import Flask
+from models import storage
+""" doc """
+
+app = FLask(__name__)
+
+@app.teardown_appcontext()
+def close_after_each_req():
+    """ doc """
+    storage.close()
+
+
+if "__main__"
