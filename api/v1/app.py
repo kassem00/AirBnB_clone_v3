@@ -9,7 +9,7 @@ import os
 app = Flask(__name__)
 
 @app.teardown_appcontext
-def close_after_each_req():
+def close_after_each_req(self):
     """Ensure resources are freed when the app context is torn down."""
     storage.close()
 
