@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 
 @app.teardown_appcontext
-def close_after_each_req(exception=None):
+def close_after_each_req(self):
     """Ensure resources are freed when the app context is torn down."""
     storage.close()
 
@@ -18,4 +18,4 @@ if "__main__" == __name__:
     host = os.getenv('HBNB_API_HOST', '0.0.0.0')
     port = os.getenv('HBNB_API_PORT', '5000')
     port = int(port)
-    app.run(host=host, port=port, threaded=True)
+    app.run(host=host, port=port, threaded=True, debug=True)
