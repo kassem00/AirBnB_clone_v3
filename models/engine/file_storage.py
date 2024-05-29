@@ -78,7 +78,7 @@ class FileStorage:
 
             if key == match:
                 return value
-            return None
+        return None
 
     def count(self, cls=None):
         """ count number of opject of classs """
