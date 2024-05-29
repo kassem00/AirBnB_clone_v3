@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from . import app_views
 from flask import jsonify
 """ doc_me """
