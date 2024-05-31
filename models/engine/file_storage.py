@@ -75,7 +75,7 @@ class FileStorage:
         o_dict = models.storage.all(cls)
 
         for key, value in o_dict.items():
-            match = cls + '.' + id
+            match = str(cls) + '.' + id
 
             if key == match:
                 return value
