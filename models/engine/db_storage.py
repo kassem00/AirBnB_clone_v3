@@ -75,6 +75,11 @@ class DBStorage:
         """call remove() method on the private session attribute"""
         self.__session.remove()
 
+    def count(self, cls=None):
+        """ count number of opject of classs """
+        o_dict = models.storage.all(cls)
+        return len(o_dict)
+
     def get(self, cls, id):
         """ get string representing the object ID """
         o_dict = models.storage.all(cls)
@@ -85,8 +90,3 @@ class DBStorage:
             if key == match:
                 return value
         return None
-
-    def count(self, cls=None):
-        """ count number of opject of classs """
-        o_dict = models.storage.all(cls)
-        return len(o_dict)
