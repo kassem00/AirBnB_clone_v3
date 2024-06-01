@@ -82,11 +82,8 @@ class DBStorage:
 
     def get(self, cls, id):
         """ get string representing the object ID """
-        o_dict = models.storage.all(cls)
-        match = str(cls) + '.' + str(id)
-
-        for key, value in o_dict.items():
-
-            if key == match:
-                return value
-        return None
+        if cls is None or id is None:
+            return None
+        obj_dict = self.all(cls)
+        key = cls.__name__ + '.' + id
+        return obj_dict.get(key, None)
